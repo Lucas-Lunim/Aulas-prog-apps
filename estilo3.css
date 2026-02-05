@@ -1,0 +1,63 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+div{
+    display: flex;
+}
+
+.blocoamarelo{
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+}
+
+.blocovermelho{
+    background-color: darkred;
+    height: 50px;
+    width: 50px;
+}
+
+.fundovermelho{
+    background-color: red;
+    height: 100%;
+    width: 100%;
+}
+
+.fundoazul{
+    background-color: cyan;
+    height: 100%;
+    width: 100%;
+}
+
+.blocãovermelho{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+}
+
+.blocãoazul{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+}
+.blocãolaranja{
+    background-color: orange;
+    height: 200px;
+    width: 200px;
+}
+
+.circulobranco{
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.circuloamarelo{
+    background-color: yellow;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
