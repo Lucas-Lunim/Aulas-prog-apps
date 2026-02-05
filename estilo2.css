@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+div{
+    display: flex;
+}
+
+.fundo_amar{
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+}
+
+.fundo_azul{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+
+.bloco_amar{
+    background-color: yellow;
+    height: 100px;
+    width: 100px;
+}
+
+.bloco_azul{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}

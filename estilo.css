@@ -1,0 +1,18 @@
+*{
+  padding: 0px;
+  margin: 0px;  
+}
+div{
+    display: flex;
+}
+.bloco_azul{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+
+}
+.bloco_laranja{
+    background-color: orange;
+    height: 50px;
+    width: 50px;
+}
