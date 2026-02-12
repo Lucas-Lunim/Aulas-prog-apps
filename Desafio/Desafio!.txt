@@ -1,0 +1,19 @@
+Fazer site que receba texto e imagem do usuário e faça uma galeria
+
+------------------------------
+|URL:blablablablablablablabla|
+------------------------------
+|Texto:blablablablablablabla |
+------------------------------
+
+
+-----------------
+|     		    |
+|		        |
+|     Foto	    |
+|		        |
+|		        |
+|		        |
+-----------------
+|     Texto	    |
+-----------------
