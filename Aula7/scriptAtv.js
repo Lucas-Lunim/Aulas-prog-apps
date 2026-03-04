@@ -52,31 +52,31 @@ dados_filtrados = users.filter((p) => p.role == "dev")
 dados(dados_filtrados, "Devs")
 
 dados_filtrados = users.filter((p) => p.role == "designer")
-dados(dados_filtrados, "Des")
+dados(dados_filtrados, "Designer")
 
 dados_filtrados = users.filter((p) => p.role == "manager")
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Manager")
 
 dados_filtrados = users.filter((p) => p.role == "data_analyst")
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Data Analyst")
 
 dados_filtrados = users.filter((p) => p.salary > 5000)
-dados(dados_filtrados, "AAAA") 
+dados(dados_filtrados, "Salário maior do que 5K") 
 
 dados_filtrados = users.filter((p) => p.salary < 4000)
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Salário menor do que 4K")
 
 dados_filtrados = users.filter((p) => p.age > 30)
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Mais do 30 anos")
 
 dados_filtrados = users.filter((p) => p.age < 25)
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Menos do que 25")
 
 dados_filtrados = users.filter((p) => p.role == "data_analyst" && p.active == true)
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Data analyst ativo")
 
 dados_filtrados = users.filter((p) => p.role == "dev" && p.salary > 4000)
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Dev com salário maior do que 4K")
 
 dados_filtrados = users.filter((p) => p.role == "manager" && p.age > 30)
-dados(dados_filtrados, "AAAA")
+dados(dados_filtrados, "Manager com mais de 30 anos")
