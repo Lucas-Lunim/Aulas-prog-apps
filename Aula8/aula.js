@@ -39,19 +39,19 @@ pessoas.push(pessoa4)
 pessoas.push(pessoa5)
 
 
-// const arr = [1,2,3,4,5]
+const arr = [1,2,3,4,5]
 
-// const somaArr = arr.reduce((acc, value) => {
-// 	return acc + value
-// }, 0)
+const somaArr = arr.reduce((acc, value) => {
+	return acc + value
+}, 0)
 
-// console.log(somaArr)
+console.log(somaArr)
 
-// const ageAvg = pessoas.reduce((acc, pessoa) =>{
-// 	return acc + pessoa.age / pessoas.length
-// }, 0)
+const ageAvg = pessoas.reduce((acc, pessoa) =>{
+	return acc + pessoa.age / pessoas.length
+}, 0)
 
-// console.log(ageAvg.toFixed(0))
+console.log(ageAvg.toFixed(0))
 
 const arr2 = [1,2,3,4,5]
 

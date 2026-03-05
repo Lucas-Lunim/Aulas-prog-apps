@@ -105,7 +105,14 @@ const maiorSal = users.reduce((acc,user) => {
 }, 0)
 
 const menorSal = users.reduce((acc,user) => {
-    return Math.min(0,user.salary)
+    return Math.min(acc,user.salary)
+}, Infinity)
+
+const activeSal = users.reduce((acc, user) => {
+    if (user.active == true) {
+        return acc + user.active
+    }
+    return acc
 }, 0)
 
-console.log(menorSal)
+console.log(activeSal)
