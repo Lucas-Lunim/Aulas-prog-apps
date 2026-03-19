@@ -1,3 +1,5 @@
+const { use } = require("react")
+
 class User{
     #id
     #name
@@ -21,11 +23,10 @@ class User{
         this.#active = true
     }
 
-    get ideEmail(){
-        return "ID: " + String(this.#id) + " Email: " + String(this.#email)
+    
+    get nome(){
+        return
     }
-
-    get nome()
 
 }
 
@@ -37,10 +38,17 @@ class cliente extends User{
 }
 
 class admin extends User{
+    constructor(id, name, email, password){
+        super(id, name, email, password)
+    }
 
+    showAllUser(){
+        return users(2, "adm", "yayya@gmail.com", "5123")
+    }
 
 }
 
-lunimb = new cliente("9292217",'Lunim',"lunimbra@pocoto.com","qwert")
-
-console.log(lunimb.ideEmail)
+const u1 = new cliente("9292217",'Lunim',"lunimbra@pocoto.com","512")
+console.log(u1.showData());
+const a1 = new admin("9294213", "Pedro", "Pedra@gmail.com", "120")
+console.log(a1.showData());
