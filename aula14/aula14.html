@@ -1,0 +1,49 @@
+
+    <div>
+    <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
+
+]
+
+    <script>
+        const dados = [
+            {nome: "macarrao", valor: 5},
+            {nome: "arroz", valor: 10},
+            {nome: "feijao", valor: 20},
+
+        ]
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar', // doughnut
+        data: {
+        labels: dados.map((p)=>{
+            return p.nome
+        }),
+        datasets: [{
+            label: '# of Votes',
+            data:dados.map((p)=>{
+            return p.valor
+        }),
+            borderWidth: 1
+        },{
+            type: "line",
+            label: "Bom dia",
+            data:[5,10,20,5,8,13,21],
+            borderWidth: 1
+        }
+    
+    ]
+        },
+        options: {
+        scales: {
+            y: {
+            beginAtZero: true
+            }
+        }
+        }
+    });
+    </script>

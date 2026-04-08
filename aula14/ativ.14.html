@@ -1,0 +1,331 @@
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 600px;
+        margin: 0 auto;
+    }
+    canvas{
+        max-width: 100%;
+        height: auto !important;
+    }
+</style>
+
+<div class="container">
+    <canvas id="um"></canvas>
+    <canvas id="dois"></canvas>
+    <canvas id="tres"></canvas>
+    <canvas id="quatro"></canvas>
+    <canvas id="cinco"></canvas>
+    <canvas id="six"></canvas>
+    <canvas id="seven"></canvas>
+    <canvas id="oito"></canvas>
+    <canvas id="nove"></canvas>
+    <canvas id="dez"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const vendas = [
+  { id: 1, produto: "Notebook", categoria: "Eletrônicos", preco: 3500, quantidade: 2, cliente: "Ana", cidade: "Curitiba", data: "2025-01-10" },
+  { id: 2, produto: "Celular", categoria: "Eletrônicos", preco: 2000, quantidade: 1, cliente: "Carlos", cidade: "São Paulo", data: "2025-01-12" },
+  { id: 3, produto: "Camiseta", categoria: "Roupas", preco: 80, quantidade: 3, cliente: "João", cidade: "Curitiba", data: "2025-01-15" },
+  { id: 4, produto: "Calça", categoria: "Roupas", preco: 120, quantidade: 2, cliente: "Maria", cidade: "Rio de Janeiro", data: "2025-01-20" },
+  { id: 5, produto: "Tênis", categoria: "Calçados", preco: 300, quantidade: 1, cliente: "Ana", cidade: "Curitiba", data: "2025-02-01" },
+  { id: 6, produto: "Fone", categoria: "Eletrônicos", preco: 150, quantidade: 4, cliente: "Pedro", cidade: "Belo Horizonte", data: "2025-02-03" },
+  { id: 7, produto: "Relógio", categoria: "Acessórios", preco: 500, quantidade: 1, cliente: "Lucas", cidade: "São Paulo", data: "2025-02-10" },
+  { id: 8, produto: "Mochila", categoria: "Acessórios", preco: 200, quantidade: 2, cliente: "Fernanda", cidade: "Curitiba", data: "2025-02-15" },
+  { id: 9, produto: "Tablet", categoria: "Eletrônicos", preco: 1800, quantidade: 1, cliente: "Carlos", cidade: "São Paulo", data: "2025-02-18" },
+  { id: 10, produto: "Jaqueta", categoria: "Roupas", preco: 250, quantidade: 1, cliente: "Ana", cidade: "Curitiba", data: "2025-03-01" },
+  { id: 11, produto: "Sandália", categoria: "Calçados", preco: 120, quantidade: 2, cliente: "Juliana", cidade: "Salvador", data: "2025-03-03" },
+  { id: 12, produto: "Boné", categoria: "Acessórios", preco: 70, quantidade: 3, cliente: "Pedro", cidade: "Belo Horizonte", data: "2025-03-05" },
+  { id: 13, produto: "Monitor", categoria: "Eletrônicos", preco: 900, quantidade: 1, cliente: "Lucas", cidade: "São Paulo", data: "2025-03-10" },
+  { id: 14, produto: "Teclado", categoria: "Eletrônicos", preco: 250, quantidade: 2, cliente: "Fernanda", cidade: "Curitiba", data: "2025-03-12" },
+  { id: 15, produto: "Mouse", categoria: "Eletrônicos", preco: 100, quantidade: 3, cliente: "João", cidade: "Curitiba", data: "2025-03-15" }];  
+  const graf1 = document.getElementById('um');
+  const graf2 = document.getElementById("dois");
+  const graf3 = document.getElementById('tres');
+  const graf4 = document.getElementById("quatro");
+  const graf5 = document.getElementById('cinco');
+  const graf6 = document.getElementById("six");
+  const graf7 = document.getElementById('seven');
+  const graf8 = document.getElementById("oito");
+  const graf9 = document.getElementById('nove');
+  const graf10 = document.getElementById("dez");
+
+
+
+  const agrupado1 = vendas.reduce((acc, item)=>{
+    if (!acc[item.categoria]){
+        acc[item.categoria] = 0;
+    }
+    acc[item.categoria] += item.preco;
+    return acc;
+  }, {});
+  
+  const gr1categoria = Object.keys(agrupado1);
+  const gr1quantidade = Object.values(agrupado1)
+  
+  new Chart(graf1, {
+      type: 'bar',
+      data: {
+          labels: gr1categoria,
+          datasets: [{
+              label: 'Faturamento por categoria',
+              data: gr1quantidade,
+              borderWidth: 1
+            },
+        ]
+    },
+});
+
+
+
+const agrupado2 = vendas.reduce((acc, item)=>{
+  if (!acc[item.categoria]){
+      acc[item.categoria] = 0;
+  }
+  acc[item.categoria] += item.quantidade;
+  return acc;
+}, {});
+
+const gr2categoria = Object.keys(agrupado2);
+const gr2quantidade = Object.values(agrupado2)
+
+  new Chart(graf2, {
+    type: "pie",
+    data: {
+    labels: gr2categoria,
+    datasets: [{
+        label: "Faturamento por categoria",
+        data: gr2quantidade,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+const agrupado3 = vendas.reduce((acc, item)=>{
+  if (!acc[item.cidade]){
+      acc[item.cidade] = 0;
+  }
+  acc[item.cidade] += item.preco;
+  return acc;
+}, {});
+
+const gr3cidade = Object.keys(agrupado3);
+const gr3preco = Object.values(agrupado3)
+
+  new Chart(graf3, {
+    type: "bar",
+    data: {
+    labels:gr3cidade,
+    datasets: [{
+        label: "Faturamento por cidade",
+        data:gr3preco,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+const agrupado4 = vendas.reduce((acc, item)=>{
+  if (!acc[item.cidade]){
+      acc[item.cidade] = 0;
+  }
+  acc[item.cidade] += item.quantidade;
+  return acc;
+}, {});
+
+const gr4cidade = Object.keys(agrupado4);
+const gr4quantidade = Object.values(agrupado4)
+
+  new Chart(graf4, {
+    type: "pie",
+    data: {
+    labels: gr4cidade,
+    datasets: [{
+        label: "Número de pedidos por cidade",
+        data: gr4quantidade,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+const agrupado5 = vendas.reduce((acc, item)=>{
+  if (!acc[item.cliente]){
+      acc[item.cliente] = 0;
+  }
+  acc[item.cliente] += item.preco;
+  return acc;
+}, {});
+
+const gr5cliente = Object.keys(agrupado5);
+const gr5preco = Object.values(agrupado5)
+
+  new Chart(graf5, {
+    type: "bar",
+    data: {
+    labels: gr5cliente,
+    datasets: [{
+        label: "Total gasto por cliente",
+        data: gr5preco,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+const agrupado6 = vendas.reduce((acc, item)=>{
+  if (!acc[item.cliente]){
+      acc[item.cliente] = 0;
+  }
+  acc[item.cliente] += item.quantidade;
+  return acc;
+}, {});
+
+const gr6cliente = Object.keys(agrupado6);
+const gr6quantidade = Object.values(agrupado6)
+
+  new Chart(graf6, {
+    type: "pie",
+    data: {
+    labels: gr6cliente,
+    datasets: [{
+        label: "Distribuição de clientes",
+        data: gr6quantidade,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+const agrupado7 = vendas.reduce((acc, item)=>{
+  if (!acc[item.produto]){
+      acc[item.produto] = 0;
+  }
+  acc[item.produto] += item.quantidade;
+  return acc;
+}, {});
+
+const gr7produto = Object.keys(agrupado7);
+const gr7quantidade = Object.values(agrupado7)
+
+  new Chart(graf7, {
+    type: "bar",
+    data: {
+    labels: gr7produto,
+    datasets: [{
+        label: "Quantidade vendida por produto",
+        data: gr7quantidade,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+
+const agrupado8 = vendas.reduce((acc, item)=>{
+  if (!acc[item.cliente]){
+      acc[item.cliente] = 0;
+  }
+  acc[item.cliente] += item.quantidade;
+  return acc;
+}, {});
+
+const gr8cliente = Object.keys(agrupado8);
+const gr8quantidade = Object.values(agrupado8)
+
+  new Chart(graf8, {
+    type: "pie",
+    data: {
+    labels: gr8cliente,
+    datasets: [{
+        label: "Faturamento por categoria",
+        data: gr8quantidade,
+        borderWidth: 1
+    },
+]
+    },
+});
+
+
+const agrupadoQ = vendas.reduce((acc, item)=>{
+  if (!acc[item.categoria]){
+      acc[item.categoria] = 0;
+  }
+  acc[item.categoria] += item.quantidade;
+  return acc;
+}, {});
+
+
+const agrupadoF = vendas.reduce((acc, item)=>{
+  if (!acc[item.categoria]){
+      acc[item.categoria] = 0;
+  }
+  acc[item.categoria] += item.preco * item.quantidade;
+  return acc;
+}, {});
+
+const gr9categoria = Object.keys(agrupadoQ);
+const gr9quantidade = Object.values(agrupadoQ)
+const gr9faturamento = Object.values(agrupadoF)
+
+new Chart(graf9, {
+    type: "bar",
+    data: {
+        labels: gr9categoria,
+        datasets: [
+            {
+                label: "Quantidade",
+                data: gr9quantidade,
+                borderWidth: 1
+            },
+            {
+                label: "Faturamento",
+                data: gr9faturamento.map(v => v / 1000),
+                borderWidth: 1
+            }
+        ]
+    }
+});
+
+
+
+const agrupado10 = vendas.reduce((acc, item) => {
+  const mes = item.data.split("-")[1]; // pega o mês
+
+  if (!acc[mes]) {
+    acc[mes] = 0;
+  }
+
+  acc[mes] += item.quantidade;
+  return acc;
+}, {});
+
+const gr10data = Object.keys(agrupado10);
+const gr10quantidade = Object.values(agrupado10)
+
+  new Chart(graf10, {
+    type: "bar",
+    data: {
+    labels: gr10data,
+    datasets: [{
+        label: "Vendas por mês",
+        data: gr10quantidade,
+        borderWidth: 1
+    },
+]
+    },
+});
+</script>
