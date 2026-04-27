@@ -82,7 +82,7 @@ app.put('/users/:id', async (req, res) => {
   }
 });
 
-app.delete('/users/:id', async (req, res) => {
+app.delete('/deletar/:id', async (req, res) => {
   try {
     const conn = await connection;
 
