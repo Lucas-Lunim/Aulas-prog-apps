@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Formulário</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div>
+        <h1><center>Bosch/SENAI </center></h1>
+    </div>
+    <h2><center>Análise de dados | Programação de Aplicativos</center></h2>
+
+    <hr>
+
+    <h3>Formulário de inscrição</h3>
+    <p>Por favor digite seu Nome, email e senha para se cadastrar no nosso site!</p>
+    <form id="form">
+
+        <input type="text" placeholder="produto" id="produto">
+        <input type="text" placeholder="categoria" id="categoria">
+        <input type="text" placeholder="quantidade" id="quantidade">
+        <input type="text" placeholder="preco" id="preco">
+        <input type="text" placeholder="valor_total" id="valor_total">
+        <input type="text" placeholder="data_venda" id="data_venda">
+        <input type="text" placeholder="forma_pagamento" id="forma_pagamento">
+        <input type="text" placeholder="nome_vendedor" id="nome_vendedor">
+
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    
+    <table border="1">
+        
+        <thead>
+            <th>produto</th>
+            <th>categoria</th>
+            <th>quantidade</th>
+            <th>preco</th>
+            <th>valor_total</th>
+            <th>data_venda</th>
+            <th>forma_pagamento</th>
+            <th>nome_vendedor</th>
+            <th>Ações</th>
+        </thead>
+        <tbody id="listarestaurante">
+            
+        </tbody>
+    </table>
+    <br>
+    <form method="post" id="formatt">
+        <input type="hidden" id="idatt">
+        <input type="text" placeholder="produto" id="produtoatt">
+        <input type="text" placeholder="categoria" id="categoriaatt">
+        <input type="text" placeholder="quantidade" id="quantidadeatt">
+        <input type="text" placeholder="preco" id="precoatt">
+        <input type="text" placeholder="valor_total" id="valor_totalatt">
+        <input type="text" placeholder="data_venda" id="data_vendaatt">
+        <input type="text" placeholder="forma_pagamento" id="forma_pagamentoatt">
+        <input type="text" placeholder="nome_vendedor" id="nome_vendedoratt">
+        <button type="submit">Atualizar</button>
+    </form>
+    <script src="index.js"></script>
+    <br>
+    <hr>
+</body>
+</html>

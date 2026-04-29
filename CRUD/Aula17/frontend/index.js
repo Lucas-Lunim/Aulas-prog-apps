@@ -101,14 +101,3 @@ async function deletarUsuario(id) {
     })
     carregarUsuarios();
 }
-
-app.delete("/deletar/:id", (req, res)=>{
-    const {id} = req.params
-    try{
-        connection.query("DELETE FROM usuario WHERE id = ?",[id])
-        return res.status(200).send({message: "Usuário deletado com sucesso!"})
-    }
-    catch(e){
-        return res.status(500).send({error:e})
-    }
-})

@@ -1,0 +1,25 @@
+h1{
+    color: #2c4a63 ;
+}
+h3{
+    color: #2c4a63 ;
+}
+h2{
+    color: #6c7a89;
+}
+
+table{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #999; 
+    margin-left: 100px;
+    background-color: #e7e7e7;
+    color: #000000;
+}
+
+    
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
