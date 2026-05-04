@@ -7,12 +7,14 @@ produto varchar(50) not null,
 categoria varchar(50) not null,
 quantidade int not null,
 preco decimal(10,2) not null,
+valor_total decimal(10,2) not null,
 data_venda date not null,
 forma_pagamento varchar(20) not null,
 nome_vendedor varchar(30) not null
 );
 
 insert into restaurante values
-(1, "garfo", "utensílio", 1, 5.99, "2026-04-29", "Pix", "caquy");
+(1, "garfo", "utensílio", 2, 5.99, 11.98, "2026-04-29", "Pix", "caquy");
 
 select * from restaurante;
+
