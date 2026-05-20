@@ -1,13 +1,14 @@
 import express, { Router } from 'express'
 import { getStorage, createStorage, updateStorage, deleteStorage } from '../controllers/EstoqueController.js';
+import { validateCreatePeca,validateGetPecaById,validateUpdatePeca, validateDeletePeca } from '../middleware/estoqueMiddleware.js';
 
 const router = express.Router();
 
 router
     .get('/storages', getStorage)
-    .get('/storages/:id', getStorage)
-    .post('/registerSt', createStorage)
-    .put('/updateSt/:id', updateStorage)
-    .delete('/deleteSt/:id', deleteStorage)
+    .get('/storages/:id', validateGetPecaById, getStorage)
+    .post('/registerSt', validateCreatePeca, createStorage)
+    .put('/updateSt/:id', validateUpdatePeca, updateStorage)
+    .delete('/deleteSt/:id', validateDeletePeca, deleteStorage)
 
 export default router

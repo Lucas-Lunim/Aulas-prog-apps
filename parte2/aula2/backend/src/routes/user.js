@@ -1,11 +1,12 @@
 import express, { response, Router } from 'express'
 import { createUser, deleteUser, getPeople, updateUser } from '../controllers/UserController.js'
+import { ValidateRegisterU } from '../middleware/userMiddleware.js';
 
 const router = express.Router();
 
 router
     .get('/users', getPeople)
-    .post("/register", createUser)
+    .post("/register",ValidateRegisterU, createUser)
     .put("/update/:id", updateUser)
     .delete("/delete/:id", deleteUser)
 

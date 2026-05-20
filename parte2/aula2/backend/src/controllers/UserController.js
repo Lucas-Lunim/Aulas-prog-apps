@@ -6,6 +6,7 @@ const people = [{name: "Artur"}, {name: "Pedro"}, {name:"Igor"}]
 export const getPeople = (req, res) => {
     const users = Connection.query('SELECT * FROM user', (err, results) => {
         if(err){
+            // console.log(err)
             return res.status(500).send({response: "Ocorreu algum erro"})
         }
         return res.status(200).send(users)
