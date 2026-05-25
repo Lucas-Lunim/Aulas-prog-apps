@@ -1,4 +1,5 @@
 import { response } from "express";
+import  connection  from "../database/db.js";
 
 export function validateCreatePeca(req,res,next){
     const {nome_peca,codigo_peca,fornecedor,quantidade,preco_unitario,estoque} = req.body
@@ -61,12 +62,3 @@ export function validateDeletePeca(req,res,next){
     next();
 }
 
-// export function ValidateRegister(req,res,next){
-//     const {name,email, password} = req.body
-
-//     if(!name || name.length < 3 || name.trim() == ''){
-//         return res.status(400).send({response: "Revise os dados!"})
-//     }
-
-//     next();
-// }

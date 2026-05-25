@@ -5,7 +5,7 @@ import { validateCreatePeca,validateGetPecaById,validateUpdatePeca, validateDele
 const router = express.Router();
 
 router
-    .get('/storages', getStorage)
+    .get('/storage', getStorage)
     .get('/storages/:id', validateGetPecaById, getStorage)
     .post('/registerSt', validateCreatePeca, createStorage)
     .put('/updateSt/:id', validateUpdatePeca, updateStorage)

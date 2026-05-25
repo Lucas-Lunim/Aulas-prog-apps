@@ -1,5 +1,5 @@
 import { response } from "express";
-import { connection } from "../database/db.js";
+import  connection  from "../database/db.js";
 
 export const getStorage = (req, res) => {
     connection.query('SELECT * FROM estoque', (err, results) => {

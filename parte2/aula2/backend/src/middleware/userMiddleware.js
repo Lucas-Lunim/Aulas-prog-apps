@@ -14,3 +14,18 @@ export function ValidateRegisterU(req,res,next){
 
     next();
 }
+
+export const ValidateUpdate = (req, res, next) => {
+    const { id } = req.params
+
+    connection.query('SELECT * FROM user where id = ?'),
+        [id],
+        (err, results) => {
+            if(err){
+                return res.status(404).send({response: "Este usúario não foi encontrado"})
+            }
+            if(results){
+                next();
+            }
+        }
+}
